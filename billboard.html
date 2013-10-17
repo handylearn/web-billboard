@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<meta name="author" content="handylearn" />
+
+	<title>Billboard with JQuery</title>
+	<style type="text/css">
+	
+	* {magin: 0; padding: 0;}
+	
+	#billboard{
+		width: 260px;
+		height:  264px;
+		background-image: url(Rahmen.jpg);
+		position: relative;
+		padding: 0px;
+		left: 50px;
+	}
+	#billboard ul{
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+		position: absolute;
+		top: 31px;
+		left: 29px;	
+		clip: rect(0px  200px 200px 0px);	
+	}
+	#billboard ul li{
+		position: relative;
+		top: 0px;	
+    border: none;
+    padding: 0px;	
+    margin: 0px;
+    height: 200px;
+	}
+	#billboard img{
+	  border: none;
+  }
+  
+	</style>
+	<script src="jquery-1.3.2.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	/* <![CDATA[ */
+	var picth = 200;		/* height of a single picture */
+	var nr_picts = 3;
+	function simple_move_up(){
+		$('#billboard ul li').animate({top: '-200px'}, 3000);	
+	}
+	var curpos = 0;	
+	var minpos = - nr_picts * picth;
+	function move_up(ydiff){
+		curpos = curpos - ydiff;  
+		if (curpos < minpos){
+			curpos = 0;
+			$('#billboard ul li').css({top: curpos});
+			curpos = curpos - picth;
+		}
+    $('#billboard ul li').animate({top: curpos}, 3000);
+		$('#curposshow').text(curpos);	
+	}
+	
+	$(document).ready(function(){
+		setInterval("move_up(200)", 8000);
+	})
+	/* ]]> */
+
+    </script>
+	</head>
+<body>
+<h1>Billboard with jQuery</h1>
+
+<div id="billboard">
+<ul>
+  <li><a href="../dbpublish/dbpublish.html"><img src="dbpublish.gif" width="200" height="200" alt="db publish grafic" /></a></li>
+  <li><a href="http://handylearn-projects.de/animals-de.html"><img src="lion.jpg" width="200" height="200" alt="lion" /></a></li>
+  <li><a href="http://handylearn-projects.de/wavelab-en.html"><img src="waves200.png" width="200" height="200" alt="cosmic waves" /></a></li>
+  <li><a href="../dbpublish/dbpublish.html"><img src="dbpublish.gif" width="200" height="200" alt="db publish grafic" /></a></li>
+</ul>
+</div>
+<p>Position: <span id="curposshow">0</span></p>
+<hr/>
+
+<p>An example page from <a href="http://meier-online.com">meier-online.com</a></p>
+</body>
+</html>
