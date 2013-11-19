@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf8" />
+	<meta name="author" content="handylearn" />
+
+	<title>Billboard with JQuery</title>
+	<style type="text/css">
+	
+	* {margin: 0; padding: 0;}
+	
+	#billboard{
+		width: 260px;
+		height:  264px;
+		background-image: url(Rahmen.jpg);
+		position: relative;
+		padding: 0px;
+		left: 50px;
+	}
+	#billboardwindow{
+		top: 31px;
+		left: 29px;	
+		clip: rect(0px  200px 200px 0px);	
+		position: absolute;
+		padding: 0px;
+		margin: 0px;
+	}
+	#billboard ul{
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+
+	}
+	#billboard ul li{
+		position: relative;
+		top: 0px;	
+        border: none;
+        padding: 0px;	
+        margin: 0px;
+        height: 200px;
+		animation-delay: 1s;
+		animation-duration: 9s;
+		animation-iteration-count: infinite;
+		animation-name: slideup;		
+	}
+	#billboard img{
+	  border: none;
+    }
+	@keyframes slideup {
+		from {
+			top: 0px;
+		}
+		16% {
+			top: -200px;
+		}
+		33% {
+			top: -200px;
+		}
+		50% {
+			top: -400px;
+		}
+		67% {
+			top: -400px;
+		}
+		84% {
+			top: -600px;
+		}		
+		to {
+			top: -600px;
+		}
+    }
+
+  
+	</style>
+	<script type="text/javascript">
+	/* <![CDATA[ */
+
+	/* ]]> */
+
+    </script>
+	</head>
+<body>
+<h1>Billboard with CSS-Animations</h1>
+
+<div id="billboard">
+<div id="billboardwindow">
+<ul>
+  <li><a href="../dbpublish/dbpublish.html"><img src="dbpublish.gif" width="200" height="200" alt="db publish grafic" /></a></li>
+  <li><a href="http://handylearn-projects.de/animals-de.html"><img src="lion.jpg" width="200" height="200" alt="lion" /></a></li>
+  <li><a href="http://handylearn-projects.de/wavelab-en.html"><img src="waves200.png" width="200" height="200" alt="cosmic waves" /></a></li>
+  <li><a href="../dbpublish/dbpublish.html"><img src="dbpublish.gif" width="200" height="200" alt="db publish grafic" /></a></li>
+</ul>
+</div>
+</div>
+
+<hr/>
+
+<p>An example page from <a href="http://meier-online.com">meier-online.com</a></p>
+</body>
+</html>
